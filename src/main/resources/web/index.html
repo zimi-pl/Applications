@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"> 
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.2.min.js"> </script>
+        <script type="text/javascript" src="/list.js"> </script>
+        <script type="text/javascript" src="/application.js"> </script>
+        <script type="text/javascript" src="/init.js"> </script>
+    </head>
+    <body>
+        <div id="list">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nazwa</th>
+                        <th>Treść</th>
+                        <th>Stan</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+            <div id="pager"></div>
+        </div>
+        <div id="application">
+            <input type="hidden" id="idApplication" />
+            <div><label for="name">Nazwa: </label> <input type="text" id="name" /></div>
+            <div><label for="state">Stan: <span id="state"> </span></label></div>
+            <div><label for="content">Treść:</label></div>
+            <textarea id="content">
+            </textarea>
+            
+            <div id="actions">
+                <a href="/index.html"> Wróć do listy</a>
+                <button class="created">CREATE</button>
+                <button class="verified">VERIFY</button>
+                <button class="deleted">DELETE</button>
+                <button class="rejected">REJECT</button>
+                <button class="accepted">ACCEPT</button>
+                <button class="published">PUBLISH</button>
+            </div>
+        </div>
+    </body>
+</html>
