@@ -12,6 +12,11 @@ function loadApplication(url) {
     return false;
 }
 
+function prepareForNewApplication() {
+    jQuery.get("/newApplication", handleResponse);
+    return false;
+}
+
 function handleResponse(applicationString) {
     var applicationPage = JSON.parse(applicationString);
     var application = applicationPage.application;
@@ -31,8 +36,11 @@ function handleResponse(applicationString) {
 
 function takeAction() {
     var newState = jQuery(this).attr('class').toUpperCase();
-    var id = jQuery("#idApplication").val()
-    
-    jQuery.post("/application/" + id, {action: newState}, handleResponse);
-    
+    if (newState === 'CREATED') {
+        jQuery.post("/newApplication", {action: newState, name: jQuery("#name").val(), content: jQuery("#content").val()}, handleResponse);
+        loadList("/page/1");
+    } else {
+        var id = jQuery("#idApplication").val()
+        jQuery.post("/application/" + id, {action: newState}, handleResponse);
+    }
 }

@@ -23,6 +23,8 @@ public class Server {
         get("/page/:pageId", new ListController(bean), JsonUtil.json());
         get("/application/:applicationId", new ApplicationController(bean), JsonUtil.json());
         post("/application/:applicationId", new ApplicationController(bean), JsonUtil.json());
+        get("/newApplication", new ApplicationNewController(bean), JsonUtil.json());
+        post("/newApplication", new ApplicationNewController(bean), JsonUtil.json());
         
     }
 

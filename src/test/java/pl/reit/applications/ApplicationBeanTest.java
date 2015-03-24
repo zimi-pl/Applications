@@ -77,7 +77,7 @@ public class ApplicationBeanTest {
         Application application = new Application();
         application.setName("próba");
         application.setContent("zapisu");
-        Application saved = applicationBeanFactory(11).save(application);
+        Application saved = applicationBeanFactory(11).create(application);
         assertEquals((Integer)12, saved.getId());
     }
     

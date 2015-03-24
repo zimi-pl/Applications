@@ -20,9 +20,8 @@ public class ApplicationBean {
     
     public ApplicationBean(List<Application> initApplications) {
         for (Application app : initApplications) {
-            save(app);
+            create(app);
         }
-        applications = initApplications;
     }
 
     private void register(Application app) {
@@ -52,8 +51,9 @@ public class ApplicationBean {
         return (int)Math.ceil((double)numberOfApplications()/10);
     }
 
-    public Application save(Application application) {
+    public Application create(Application application) {
         register(application);
+        applications.add(application);
         return application;
     }
 
